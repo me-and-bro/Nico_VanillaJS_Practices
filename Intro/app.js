@@ -97,26 +97,43 @@
 /** Event 실습 2 */
 // Window도 Document와 같이 기본으로 제공되는 요소
 
+// const h1 = document.querySelector("div.Hello h1");
+
+// function handleWindowResize(){
+//     document.body.style.backgroundColor = "tomato";
+// }
+
+// function handleWindowCopy(){
+//     alert("You Copier!");
+// }
+
+// function handleWindowOffline(){
+//     alert("SOS! Wifi Offline!");
+// }
+
+// function handleWindowOnline(){
+//     alert("Wifi Good!!");
+// }
+
+// window.addEventListener("resize", handleWindowResize);
+// window.addEventListener("copy", handleWindowCopy);
+
+// window.addEventListener("offline", handleWindowOffline);
+// window.addEventListener("online", handleWindowOnline);
+
+/** classList 테스트 */
+
 const h1 = document.querySelector("div.Hello h1");
 
-function handleWindowResize(){
-    document.body.style.backgroundColor = "tomato";
+// console.log(h1);
+
+h1.classList.add("S-Test");
+
+console.log(h1.classList);
+
+function handleClick(){
+    h1.classList.toggle("S-Font");
+    console.log(h1.classList);
 }
 
-function handleWindowCopy(){
-    alert("You Copier!");
-}
-
-function handleWindowOffline(){
-    alert("SOS! Wifi Offline!");
-}
-
-function handleWindowOnline(){
-    alert("Wifi Good!!");
-}
-
-window.addEventListener("resize", handleWindowResize);
-window.addEventListener("copy", handleWindowCopy);
-
-window.addEventListener("offline", handleWindowOffline);
-window.addEventListener("online", handleWindowOnline);
+h1.addEventListener("click", handleClick);

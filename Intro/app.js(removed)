@@ -11,16 +11,14 @@
 
 // console.log (arr);
 
-let age = parseInt(prompt("How old are you?"));
+// let age = parseInt(prompt("How old are you?"));
 
+// while(isNaN(age)){
 
+//     age = parseInt(prompt("Answer is number only. Please input your age in number.\n\nHow old are you?"));
 
-while(isNaN(age)){
+//     if(!isNaN(age))
+//         break;
+// }
 
-    age = parseInt(prompt("Answer is number only. Please input your age in number.\n\nHow old are you?"));
-
-    if(!isNaN(age))
-        break;
-}
-
-console.log(age);
+// console.log(age);

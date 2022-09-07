@@ -1,0 +1,26 @@
+// /** function */
+
+// function func(name, age){
+//     console.log("Hi, my name is " + name + " and i'm " + age + " years old.");
+// };
+
+// func ("nico", 35);
+
+// /** array */
+// const arr = ["data", 23, null, undefined];
+
+// console.log (arr);
+
+let age = parseInt(prompt("How old are you?"));
+
+
+
+while(isNaN(age)){
+
+    age = parseInt(prompt("Answer is number only. Please input your age in number.\n\nHow old are you?"));
+
+    if(!isNaN(age))
+        break;
+}
+
+console.log(age);

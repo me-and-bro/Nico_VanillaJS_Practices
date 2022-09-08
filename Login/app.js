@@ -1,37 +1,32 @@
-/** 선언 방식 1 */
-// const loginForm = document.querySelector("login-form");
-
-// const loginInput = loginForm.querySelector("input");
-// const loginButton = loginForm.querySelector("button");
-
-/** 선언 방식 2 */
-/** Login 버튼 예제 */
-// const loginInput = document.querySelector("#login-form input");
-// const loginButton = document.querySelector("#login-form button");
-
-// function onLoginBtnClick(){
-//     const username = loginInput.value;
-//     if(username === ""){
-//         alert("Please write your name");
-//     } else if(username.length > 15){
-//         alert("Your name is too long.");
-//     }
-    
-// }
-// loginButton.addEventListener("click", onLoginBtnClick);
-
-/** Form 기반의 eventListener 예제 */
-
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
+const greeting = document.getElementById("greeting");
 
-function onLoginSubmit(event){      // JS는 모든 Listener로 호출되는 함수의 첫번째 argument를 통해 방금 실행된 동작에 대한 요약을 자동으로 제공. (event object)
-                                    // argument의 이름은 아무렇게 지어도 상관없지만 관행적으로 'event'를 사용
-    event.preventDefault();         // 브라우저에서 자동으로 실행하는 기본 동작을 막음 (ex) page refresh
-    console.log(event);
+const HIDDEN_CLASSNAME = "hidden";                      
+const USERNAME_KEY = "username";
 
-    console.log(loginInput.value);
+function handleInputSubmit(event) {                     // "submit" EventListener
+    event.preventDefault();                             // 브라우저 기본 동작 제어
+    const username = loginInput.value;                  // Username 저장
 
+    localStorage.setItem(USERNAME_KEY, username);       // localStorage User 키/값 저장
+
+    loginForm.classList.add(HIDDEN_CLASSNAME);          // Form 숨기기
+    paintGreetings(username);                           // Greeting 표시
 }
 
-loginForm.addEventListener("submit", onLoginSubmit);
+function paintGreetings(username){                          // Greeting 표시 함수
+    greeting.innerText = `Hello ${username}`;               // innerText 저장
+    greeting.classList.remove(HIDDEN_CLASSNAME);            // Greeting 표시
+}
+
+const savedUsername = localStorage.getItem(USERNAME_KEY);   // localStorage username 값 저장
+
+if (savedUsername === null) {
+    // form 표시
+    loginForm.classList.remove(HIDDEN_CLASSNAME);
+    loginForm.addEventListener("submit", handleInputSubmit);
+} else {
+    // greeting 표시
+    paintGreetings(savedUsername);
+}

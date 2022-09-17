@@ -94,29 +94,62 @@
 // title.addEventListener("click", handleTitleClick);                  // EventListener 실행 구문
 // title.onClick(handleTitleClick);                                    // EventListener 실행 구문 2
 
-/** Event 실습 2 */
-// Window도 Document와 같이 기본으로 제공되는 요소
+// /** Event 실습 2 */
+// // Window도 Document와 같이 기본으로 제공되는 요소
 
-const h1 = document.querySelector("div.Hello h1");
+// const h1 = document.querySelector("div.Hello h1");
 
-function handleWindowResize(){
-    document.body.style.backgroundColor = "tomato";
+// function handleWindowResize(){
+//     document.body.style.backgroundColor = "tomato";
+// }
+
+// function handleWindowCopy(){
+//     alert("You Copier!");
+// }
+
+// function handleWindowOffline(){
+//     alert("SOS! Wifi Offline!");
+// }
+
+// function handleWindowOnline(){
+//     alert("Wifi Good!!");
+// }
+
+// window.addEventListener("resize", handleWindowResize);
+// window.addEventListener("copy", handleWindowCopy);
+
+// window.addEventListener("offline", handleWindowOffline);
+// window.addEventListener("online", handleWindowOnline);
+
+// /** 실습 3 */
+
+// const h1 = document.querySelector("div.Hello:first-child h1");
+
+// function handleTitleClick(){
+//     const curColor = h1.style.color;
+//     let newColor;
+//     if(curColor === "blue")
+//         newColor = "tomato";
+//     else
+//         newColor = "blue";
+//     h1.style.color = newColor;
+// }
+
+// h1.addEventListener("click", handleTitleClick);
+
+
+const h1 = document.querySelector("div.Hello:first-child h1");
+
+function handleTitleClick(){
+    let curClass = h1.className;
+    
+    if(curClass === "active"){
+        curClass = "";
+    }else{
+        curClass = "active";
+    }
+
+    h1.className = curClass;
 }
 
-function handleWindowCopy(){
-    alert("You Copier!");
-}
-
-function handleWindowOffline(){
-    alert("SOS! Wifi Offline!");
-}
-
-function handleWindowOnline(){
-    alert("Wifi Good!!");
-}
-
-window.addEventListener("resize", handleWindowResize);
-window.addEventListener("copy", handleWindowCopy);
-
-window.addEventListener("offline", handleWindowOffline);
-window.addEventListener("online", handleWindowOnline);
+h1.addEventListener("click", handleTitleClick);

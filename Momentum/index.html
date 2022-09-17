@@ -9,11 +9,17 @@
 </head>
 <body>
     <form id="login-form" class="hidden">
-        <input type="text" required maxlength="15" placeholder="What is your name?">
+        <input type="text" required maxlength="15" placeholder="당신의 이름은?">
         <button>Log in</button>
     </form>
     <h2 id="clock">00:00</h2>
     <h1 id="greeting" class="hidden"></h1>
+    <form id="todo-form">
+        <input type="text" placeholder="할 일을 입력" required>
+    </form>
+    <ul id="todo-list">
+
+    </ul>
     <div id="quote">
         <span></span> <p></p>
         <span></span>
@@ -22,5 +28,6 @@
     <script src="js/greetings.js"></script>
     <script src="js/quotes.js"></script>
     <script src="js/background.js"></script>
+    <script src="js/todo.js"></script>
 </body>
 </html>

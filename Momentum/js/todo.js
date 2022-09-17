@@ -10,29 +10,19 @@ const TODOS_KEY = "todos"
 let todos = [];
 
 function saveTodos() {
-    // Todo save in local storage
+    // Todo save in localStorage
     localStorage.setItem(TODOS_KEY, JSON.stringify(todos));
 }
 
 function deleteTodos(event) {
-    // Todo delete in local storage
     // del_button 클릭 이벤트
     // 클릭한 button의 부모 element
     const li = event.target.parentElement;
-    // 제거
-    console.log(li);
-    for(let i=0; i<todos.length; i++){
-        console.log(typeof(todos[i].id) + " " + todos[i].id);
-        console.log(typeof(li.id), + " " + li.id);
-        if(todos[i].id === Number(li.id)){
-            console.log("entered");
-            todos.splice(i, 1);
-            saveTodos();
-            console.log(todos);
-            break;
-        }
-    }
-    console.log(todos);
+    // 제거 (String.filter 사용)
+    todos = todos.filter((todo) => todo.id !== parseInt(li.id));
+    // Todo delete in localStorage (update)
+    saveTodos();
+    // drawn list delete
     li.remove();
 }
 
@@ -68,7 +58,7 @@ function handleToDoListSubmit(event) {
     todos.push(newToDoListObj);
     // Todo draw
     drawToDoList(newToDoListObj);
-    // Todo save in localstorage
+    // Todo save in localStorage
     saveTodos();
 }
 
@@ -77,7 +67,7 @@ toDoForm.addEventListener("submit", handleToDoListSubmit);
 const savedToDos = JSON.parse(localStorage.getItem(TODOS_KEY));
 
 if (savedToDos) {
-    // localstorage에 Todo List가 존재하는 경우
+    // localStorage에 Todo List가 존재하는 경우
     todos = savedToDos;
     savedToDos.forEach(drawToDoList);
 }

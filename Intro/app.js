@@ -137,19 +137,36 @@
 
 // h1.addEventListener("click", handleTitleClick);
 
+/**
+// const h1 = document.querySelector("div.Hello:first-child h1");
 
-const h1 = document.querySelector("div.Hello:first-child h1");
-
-function handleTitleClick(){
-    let curClass = h1.className;
+// function handleTitleClick(){
+//     let curClass = h1.className;
     
-    if(curClass === "active"){
-        curClass = "";
-    }else{
-        curClass = "active";
-    }
+//     if(curClass === "active"){
+//         curClass = "";
+//     }else{
+//         curClass = "active";
+//     }
 
-    h1.className = curClass;
-}
+//     h1.className = curClass;
+// }
 
-h1.addEventListener("click", handleTitleClick);
+// h1.addEventListener("click", handleTitleClick);
+
+/** classList 테스트 */
+
+// const h1 = document.querySelector("div.Hello h1");
+
+// // console.log(h1);
+
+// h1.classList.add("S-Test");
+
+// console.log(h1.classList);
+
+// function handleClick(){
+//     h1.classList.toggle("S-Font");
+//     console.log(h1.classList);
+// }
+
+// h1.addEventListener("click", handleClick);

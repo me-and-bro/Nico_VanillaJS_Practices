@@ -1,0 +1,24 @@
+body {
+    background-color: rgb(236, 238, 144);   
+}
+
+
+
+.S-Hello{
+    /*
+    font-family: 'Courier New', Courier, monospace;
+    */
+    color:aqua;
+}
+
+.S-Test{
+
+    color:black;
+}
+
+.S-Font{
+    /*
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    */
+    color:brown;
+}

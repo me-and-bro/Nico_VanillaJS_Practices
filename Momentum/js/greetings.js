@@ -7,7 +7,7 @@ const USERNAME_KEY = "username";
 
 function handleInputSubmit(event) {
     // "submit" EventListener
-    //event.preventDefault();                                     // 브라우저 기본 동작 제어
+    event.preventDefault();                                     // 브라우저 기본 동작 제어
     localStorage.setItem(USERNAME_KEY, loginInput.value);       // localStorage User 키/값 저장
     loginForm.classList.add(HIDDEN_CLASSNAME);                  // Form 숨기기
     paintGreetings();                                           // Greeting 표시

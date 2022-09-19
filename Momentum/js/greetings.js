@@ -16,7 +16,7 @@ function handleInputSubmit(event) {
 function paintGreetings(){
     // Greeting 표시 함수
     const username = localStorage.getItem(USERNAME_KEY);
-    greeting.innerText = `안녕하세요. ${username} 남`;           // innerText 저장
+    greeting.innerText = `안녕하세요. ${username} 님`;           // innerText 저장
     greeting.classList.remove(HIDDEN_CLASSNAME);                // Greeting 표시
 }
 

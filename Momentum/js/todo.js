@@ -33,7 +33,7 @@ function drawToDoList(newToDoList) {
     liToDo.id = newToDoList.id;
     // span element 추가
     const spanToDo = document.createElement("span");
-    spanToDo.innerText = newToDoList.text;
+    spanToDo.innerText = `${newToDoList.text} `;
     // del_button element 추가
     const btnToDo = document.createElement("button");
     btnToDo.innerText = "❌";
